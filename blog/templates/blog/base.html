@@ -8,8 +8,11 @@
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-       <body>
     <div class="page-header">
+        <a href="{% url 'randomgen' %}" class="top-menu"><span class="glyphicon glyphicon-heart"></span></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}r
         <h1><a href="/">Django Girls Blog</a></h1>
     </div>
     <div class="content container">
@@ -21,5 +24,4 @@
         </div>
     </div>
 </body>
-    </body>
 </html>
