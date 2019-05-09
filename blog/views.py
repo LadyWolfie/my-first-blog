@@ -6,7 +6,13 @@ from .forms import PostForm
 from django.shortcuts import redirect
 from .newrat import myrat
 
+
+
 # Create your views here.
+
+def menu(request):
+	return render(request,'blog/menu.html')
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts':posts})
@@ -44,9 +50,18 @@ def post_edit(request, pk):
     return render(request, 'blog/post_edit.html', {'form': form})
 
 def randomgen(request):
-	ratstring = 'Hello Rats'#myrat()
-	return render(request, 'blog/randomgen.html',{'myrat':ratstring})
+    if request.method == 'GET':
+    	return render(request, 'blog/randomgen.html', {'output': ''})
+    elif request.method == 'POST':
+        mystring = myrat()
+        return render(request, 'blog/randomgen.html', {'output': mystring})#py_obj})
 
+	#return render(request, 'blog/randomgen.html')
 
+def juno(request):
+	return render(request,'blog/index.html')
 
-    
+# def actionUrl(request):
+# 	ratstring = 'Hello Rat'
+# 	return render(request, 'blog/randomgen.html', {'output': ratstring})
+#     

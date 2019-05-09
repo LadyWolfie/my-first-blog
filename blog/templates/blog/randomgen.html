@@ -3,8 +3,15 @@
 {% block content %}
     <div class="randomgen">
         <h2>Random Pet Rat Generators</h2>
-        <br>{{myrat.ratstring}}<br>
-        <button type="submit" class="save btn btn-default">Rat</button>
+     
+        <form action="randomgen" method = "POST">{% csrf_token %}
+        <br> 
+        	{{output}}
+        	<br>
+        	<button id= "myClickButton" type="submit" class="save btn btn-default">Rat</button></form>
+        <br>
+
+
     </div>
 
 {% endblock %}

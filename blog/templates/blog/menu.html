@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <p style="font-size:30px"><a href="{% url 'post_list' %}" style="color: rgb(0,0,0)" <h2>Django Girls Blog <span style="margin-left:auto;" class="glyphicon glyphicon-file"></span></h2></a></p>
+    <br>
+
+    <p style="font-size:30px"><a href="{% url 'randomgen' %}" style="color: rgb(0,0,0)" <h2>Pet Rat Generator <span style="margin-left:auto;" class="glyphicon glyphicon-heart"></span></h2></a></p>
+    <br>
+    <p style="font-size:30px"><a href="{% url 'juno' %}" style="color: rgb(0,0,0)" <h2>Ludlum Dare - Juno <span style="margin-left:auto;" class="glyphicon glyphicon-gift"></span></h2></a></p>
+
+
+
+
+
+{% endblock %}
